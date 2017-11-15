@@ -5,7 +5,7 @@ var path = require("path");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-route = require('/routes')(app);
+require('/routes')(app);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
