@@ -7,34 +7,31 @@ console.log(waitList);
 
 module.exports = function(app) {
 
-app.get("/api/tables", function(req, res) {
+	app.get("/api/tables", function(req, res) {
 
-  	res.json(reservationList);
-  	res.json(waitList);
+	  	res.json(reservationList);
+	  	res.json(waitList);
 
-}); 
+	}); 
 
-app.post("/api/tables", function(req, res) {
+	app.post("/api/tables", function(req, res) {
 
-	var newCustomer = req.body;
-	//newCustomer.userID = newCustomer.name.replace(/\s+/g, "").toLowerCase();
-	console.log(newCustomer);
-	// if the reservation list is full
-	if (reservationList.length >= 5) { 
+		var newCustomer = req.body;
+		//newCustomer.userID = newCustomer.name.replace(/\s+/g, "").toLowerCase();
+		console.log(newCustomer);
+		// if the reservation list is full
+		if (reservationList.length >= 5) { 
 
-	  	waitList.push(newCustomer);  	
-	}  
-	// if the reservation list is open
-	else {
+		  	waitList.push(newCustomer);  	
+		}  
+		// if the reservation list is open
+		else {
 
-		reservationList.push(newCustomer);
-	}	
+			reservationList.push(newCustomer);
+		}	
 
-	res.json(newCustomer);
-});
-
-
-
+		res.json(newCustomer);
+	});
 };
 
 
