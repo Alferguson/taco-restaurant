@@ -19,7 +19,7 @@ app.post("/api/tables", function(req, res) {
 	newCustomer.userID = newCustomer.name.replace(/\s+/g, "").toLowerCase();
 	console.log(newCustomer);
 	// if the reservation list is full
-	if (reservationList.length >=5) { 
+	if (reservationList.length >= 5) { 
 
 	  	waitList.push(newCustomer);
 
